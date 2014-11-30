@@ -156,6 +156,9 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 # lower the increment
 ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.heapgrowthlimit=36m
 
+# Implement fakeiccid for legacy rils
+ADDITIONAL_BUILD_PROPERTIES += ro.telephony.ril.config=fakeiccid
+
 # Discard inherited values and use our own instead.
 PRODUCT_DEVICE := ace
 PRODUCT_NAME := ace
