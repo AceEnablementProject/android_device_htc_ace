@@ -104,6 +104,12 @@ PRODUCT_PACKAGES += gps.msm7x30
 # Proximity Recalibrator
 PRODUCT_PACKAGES += ProximityRecalibrator
 
+# Use ART small mode
+# http://source.android.com/devices/tech/dalvik/configure.html#with_art_small_mode
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.dex2oat-filter=interpret-only \
+	dalvik.vm.image-dex2oat-filter=speed
+
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vold.umsdirtyratio=20
